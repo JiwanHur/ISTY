@@ -1,6 +1,10 @@
 # ISTY (WACV 2023)
 This is a codebase for [I See-Through You: A Framework for Removing Foreground Occlusion in Both Sparse and Dense Light Field Images](https://openaccess.thecvf.com/content/WACV2023/html/Hur_I_See-Through_You_A_Framework_for_Removing_Foreground_Occlusion_in_WACV_2023_paper.html).
 
+## Requirements
+Python 3.6
+Pytorch >= 1.0 
+
 ## Dataset
 ```
 ├── train_data_dir
@@ -19,7 +23,8 @@ Please refer to the `DUTLF_V2_train_list.json`.
 
 ### occ_imgs and occ_msks
 We use occlusion images from [DeOccNet](https://github.com/YingqianWang/DeOccNet) and resize them to 600x400.
-The occlusion mask is a binary mask for occlusion images where 1 indicates occlusion and 0 indicates background.
+The occlusion mask is a binary mask for occlusion images where 1 indicates occlusion and 0 indicates background. 
+The occlusion mask can be created by simply thresholding the occlusion images. We generate the mask by converting the occ_imgs into grayscale and thresholding them with 229.
 
 ### test dataset
 The test dataset can be downloaded [DeOccNet](https://github.com/YingqianWang/DeOccNet), [Stanford Lytro](http://lightfields.stanford.edu/LF2016.html), and [EPFL-10](https://www.epfl.ch/labs/mmspg/downloads/valid/).
