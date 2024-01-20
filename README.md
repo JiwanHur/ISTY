@@ -22,7 +22,7 @@ We use occlusion images from [DeOccNet](https://github.com/YingqianWang/DeOccNet
 The occlusion mask is a binary mask for occlusion images where 1 indicates occlusion and 0 indicates background.
 
 ### test dataset
-The test dataset can be downloaded by [DeOccNet](https://github.com/YingqianWang/DeOccNet) and [DUTLF-V2](https://github.com/DUT-IIAU-OIP-Lab/DUTLF-V2).
+The test dataset can be downloaded [DeOccNet](https://github.com/YingqianWang/DeOccNet), [Stanford Lytro](http://lightfields.stanford.edu/LF2016.html), and [EPFL-10](https://www.epfl.ch/labs/mmspg/downloads/valid/).
 
 ## Train
 ### Command
@@ -35,6 +35,12 @@ The pre-trained LBAM model should be located in `ISTY/LBAMmodels/LBAM_G_500.pth`
 
 Since we use further occlusion images for training (as mentioned in the paper), the result can be slightly different if one re-trains the model following this repository.
 One can add occlusion images such as thick and complex objects to improve the performance.
+
+## Test
+```
+bash command/test.sh
+```
+The checkpoint should be in `./results/checkpoints/{scope}/LFGAN/`.
 
 ### Citations
 ```
