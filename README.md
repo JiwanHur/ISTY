@@ -1,4 +1,4 @@
-# ISTY (WACV 2023)
+# (WACV 2023) ISTY: A Framework for Removing Foreground Occlusion in Both Sparse and Dense Light Field Images
 This is a codebase for [I See-Through You: A Framework for Removing Foreground Occlusion in Both Sparse and Dense Light Field Images](https://openaccess.thecvf.com/content/WACV2023/html/Hur_I_See-Through_You_A_Framework_for_Removing_Foreground_Occlusion_in_WACV_2023_paper.html).
 
 ## Requirements
