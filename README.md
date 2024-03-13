@@ -7,14 +7,14 @@ Pytorch >= 1.0
 
 ## Dataset
 ```
-├── train_data_dir
+├── train
 |    ├── src_imgs_train        -> Source occlusion-free light field images
 |    ├── occ_imgs              -> Occlusion images without background
 |    └── occ_msks              -> Occlusion mask for occ_imgs (1 for occlusion 0 for background)
-└── test_data_dir
-     ├── test_data_1           
-     ├── test_data_2
-     └── ...
+├── test_data_dir1
+├── test_data_dir2
+├── test_data_dir3
+└── ...
 ```
 ### src_imgs_train
 We use the [DUTLF-V2](https://github.com/DUT-IIAU-OIP-Lab/DUTLF-V2) training dataset for source occlusion-free light field images.
@@ -35,7 +35,7 @@ The test dataset can be downloaded [DeOccNet](https://github.com/YingqianWang/De
 bash command/train.sh
 ```
 
-The backbone LBAM model pre-trained on Paris Street View dataset and checkpoint for ISTY can be downloaded from [here](https://drive.google.com/drive/folders/1cAs8gVU16CGlmhvktKhzu6uvH3TF9Q5r?usp=sharing).
+<!-- The backbone LBAM model pre-trained on Paris Street View dataset and checkpoint for ISTY can be downloaded from [here](https://drive.google.com/drive/folders/1cAs8gVU16CGlmhvktKhzu6uvH3TF9Q5r?usp=sharing). -->
 The pre-trained LBAM model should be located in `ISTY/LBAMmodels/LBAM_G_500.pth`.
 
 Since we use further occlusion images for training (as mentioned in the paper), the result can be slightly different if one re-trains the model following this repository.
@@ -46,6 +46,11 @@ One can add occlusion images such as thick and complex objects to improve the pe
 bash command/test.sh
 ```
 The checkpoint should be in `./results/checkpoints/{scope}/LFGAN/`.
+
+## Checkpoint and dataset
+We provide the preprocessed dataset and checkpoint of the model, and pre-trained LBAM model for the backbone architecture for Occlusion Inpainter in [here](https://drive.google.com/drive/folders/1cAs8gVU16CGlmhvktKhzu6uvH3TF9Q5r?usp=sharing).
+
+Please refer to each section for the proper location of each file.
 
 ### Citations
 ```

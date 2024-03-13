@@ -1,19 +1,19 @@
 #!/bin/bash
 ### general ###
-scope=('LBAM_deoccnet_7_5_1x1_v2');
+scope=('LBAM_deoccnet_comb_7_5_1x1_v2');
 
 random_seed=1234;
-gpu_ids='3';
+gpu_ids='0';
 mode='test';
-eval_epoch=(500 400 300);
+eval_epoch=(500);
 
 ### dataset options ###
-data_directory='/workspace/ssd1/datasets';
-name_data=('DeOccNet' 'DeOccNet' 'DeOccNet' 'DeOccNet' 'test_Stanford_Lytro_16' 'test_EPFL_10' 'Dense_Quant' 'Dense_Quant_Double');
-save_data=(1 1 1 1 1 1 0 0);
-x_res=(600 600 600 512 600 600 600 600);
-y_res=(400 400 400 512 400 400 400 400);
-uv_diameter_image=(5 5 5 5 9 9 5 5);
+data_directory='/home/jiwan.hur/ftp_shared_data/dataset/LightField/LFGAN/LF_dataset/'; # you may need to change here
+name_data=('DeOccNet' 'DeOccNet' 'DeOccNet' 'DeOccNet' 'test_Stanford_Lytro_16' 'test_EPFL_10');
+save_data=(1 1 1 1 1 1);
+x_res=(600 600 600 512 600 600);
+y_res=(400 400 400 512 400 400);
+uv_diameter_image=(5 5 5 5 9 9);
 uv_diameter=5;
 uv_dilation=1;
 data_output_option='2d_sub';
@@ -22,7 +22,7 @@ resize_scale=0.5;
 num_workers=16;
 
 ### train options ###
-model=('LBAM_deoccnet_comb_DF_v2' 'LBAM_deoccnet_comb_7_5_1x1_v12' 'LBAM_deoccnet_comb_7_5_1x1_v12');
+model=('LBAM_deoccnet_comb_7_5_1x1_v2');
 views=25;
 train_continue='on';
 batch_size=1;
@@ -42,7 +42,7 @@ log_dir='./results/log';
 checkpoint_dir='./results/checkpoints';
 results_dir='./results/res_imgs';
 name_metric='psnrssim';
-log_iter=100;
+log_iter=1;
 for((k=0;k<1;k++)); do # eval epoch
     for((j=0;j<1;j++)); do # scope, model
         for((i=0;i<8;i++)); do # dataset

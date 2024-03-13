@@ -7,7 +7,7 @@ def ModelSelector(args):
 
     if args.model == 'LBAM_deoccnet_comb_7_5_1x1_v2':
         from LBAMmodels.LF_LBAM_7_5_1x1_v2 import LF_LBAM
-        fn_model = LF_LBAM(4,3,'./LBAMModels/LBAM_G_500.pth', args.device)
+        fn_model = LF_LBAM(4,3,'./LBAMmodels/LBAM_G_500.pth', args.device)
 
     return fn_model
 

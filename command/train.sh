@@ -8,8 +8,8 @@ mode='train';
 eval_epoch=1;
 
 ### dataset options ###
-data_directory='/workspace/ssd1/datasets';
-name_data='LFGAN';
+data_directory='/home/jiwan.hur/ftp_shared_data/dataset/LightField/LFGAN/LF_dataset'; # you may need to change here
+name_data='train';
 x_res=600;
 y_res=400;
 uv_diameter_image=5;
